@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="leanote,leanote.com">
-    <meta name="description" content="leanote, not only a notebook">
-    <meta name="author" content="svtter">
+    <meta name="description" content="{{$.themeInfo.Desc}}">
+    <meta name="author" content="{{$.themeInfo.Author}}}">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Hexo">
-    <meta property="og:url" content="http://yoursite.com/index.html">
-    <meta property="og:site_name" content="Hexo">
+    <meta property="og:title" content="{{$.blogInfo.Title}}">
+    <meta property="og:url" content="{{$.indexUrl}}/index.html">
+    <meta property="og:site_name" content="{{$.blogInfo.Title}}">
     <meta property="og:description">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Hexo">
+    <meta name="twitter:title" content="{{$.blogInfo.Title}}">
     <meta name="twitter:description">
 
 
@@ -23,31 +23,16 @@
     <link href="{{$.bootstrapCssUrl}}" rel="stylesheet">
 
     <title>
-        <!--{{if $.curIsIndex}}-->
-        <!--{{$.blogInfo.Title}}-->
-        <!--{{else if $.curIsCate}}-->
-        <!--分类-{{$.curCateTitle}}-->
-        <!--{{else if $.curIsSearch}}-->
-        <!--搜索-{{$.keywords}}-->
-        <!--{{else if $.curIsTags}}-->
-        <!--我的标签-->
-        <!--{{else if $.curIsTagPosts}}-->
-        <!--标签-{{$.curTag}}-->
-        <!--{{else if $.curIsPost}}-->
-        <!--{{$.post.Title}}-->
-        <!--{{else if $.curIsSingle}}-->
-        <!--{{$.single.Title}}-->
-        <!--{{else if $.curIsArchive}}-->
-        <!--归档-->
-        <!--{{end}}-->
+        {{if $.curIsIndex}}
+        {{$.blogInfo.Title}}
+        {{end}}
     </title>
 </head>
 <body>
 <header>
   <div class="content-home text-center">
-      <!--TODO: image-->
   <a class="avatar" href="/">
-    <img src="/avatar.jpg" alt="" />
+      <img src="{{$.themeBaseUrl}}/images/avatar.jpg" alt="" />
   </a>
   <h1 class="name">
     {{$.blogInfo.Title}}
@@ -60,7 +45,7 @@
   <ul class="text-center nav">
     
       <li class="item">
-        <a href="{{$.themeBaseUrl}}/archives" target="_blank">Blog</a>
+        <a href="{{$.themeBaseUrl}}/archives.html" target="_blank">Blog</a>
         <span>|</span>
       </li>
     
@@ -71,12 +56,12 @@
       </li>
     
       <li class="item">
-        <a href="http://www.douban.com/people/forsigner/" target="_blank">Douban</a>
+        <a href="http://www.douban.com/people/{{$.themeInfo.douban}}/" target="_blank">Douban</a>
         <span>|</span>
       </li>
     
       <li class="item">
-        <a href="https://twitter.com/forsigner" target="_blank">Twitter</a>
+        <a href="https://twitter.com/{{$.themeInfo.twitter}}" target="_blank">Twitter</a>
         <span>|</span>
       </li>
     
