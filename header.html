@@ -32,13 +32,17 @@
 <header>
   <div class="content-home text-center">
   <a class="avatar" href="/">
+      {{if $.blogInfo.Logo}}
+      <img src="{{$.blogInfo.Logo}}" alt="" />
+      {{else}}
       <img src="{{$.themeBaseUrl}}/images/avatar.jpg" alt="" />
+      {{end}}
   </a>
   <h1 class="name">
     {{$.blogInfo.Title}}
   </h1>
   <div class="slogan">
-    {{$.blogInfo.Subtitle}}
+    {{$.blogInfo.SubTitle}}
   </div>
   <hr>
 
