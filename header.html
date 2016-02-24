@@ -23,59 +23,27 @@
     <link href="{{$.bootstrapCssUrl}}" rel="stylesheet">
 
     <title>
-        {{if $.curIsIndex}}
-        {{$.blogInfo.Title}}
-        {{else if $.curIsCate}}
-        分类-{{$.curCateTitle}}
-        {{else if $.curIsSearch}}
-        搜索-{{$.keywords}}
-        {{else if $.curIsTags}}
-        我的标签
-        {{else if $.curIsTagPosts}}
-        标签-{{$.curTag}}
-        {{else if $.curIsPost}}
-        {{$.post.Title}}
-        {{else if $.curIsSingle}}
-        {{$.single.Title}}
-        {{else if $.curIsArchive}}
-        归档
-        {{end}}
-
+        <!--{{if $.curIsIndex}}-->
+        <!--{{$.blogInfo.Title}}-->
+        <!--{{else if $.curIsCate}}-->
+        <!--分类-{{$.curCateTitle}}-->
+        <!--{{else if $.curIsSearch}}-->
+        <!--搜索-{{$.keywords}}-->
+        <!--{{else if $.curIsTags}}-->
+        <!--我的标签-->
+        <!--{{else if $.curIsTagPosts}}-->
+        <!--标签-{{$.curTag}}-->
+        <!--{{else if $.curIsPost}}-->
+        <!--{{$.post.Title}}-->
+        <!--{{else if $.curIsSingle}}-->
+        <!--{{$.single.Title}}-->
+        <!--{{else if $.curIsArchive}}-->
+        <!--归档-->
+        <!--{{end}}-->
     </title>
-    <!-- Bootstrap core CSS -->
-    <!--[if lt IE 9]>
-    <script src="{{$.themeBaseUrl}}/modernizr.js"></script>
-    <![endif]-->
 </head>
 <body>
 <header>
-    <!--<nav id="nav">-->
-        <!--<ul>-->
-            <!--<li class="{{if $.curIsIndex}}active{{end}}"><a href="{{.indexUrl}}" class="nav-header">主页</a></li>-->
-             <!--分类页 -->
-            <!--{{range $.cates}}-->
-            <!--<li class="{{if eq .CateId $.curCateId}}active{{end}}">-->
-                <!--<a href="{{$.cateUrl}}/{{.UrlTitle}}" class="nav-header"-->
-                        <!-->{{.Title}}</a>-->
-            <!--</li>-->
-            <!--{{end}}-->
-             <!--单页 -->
-            <!--{{range $.singles}}-->
-            <!--<li class="{{if eq $.curSingleId .SingleId}}active{{end}}">-->
-                <!--<a href="{{$.singleUrl}}/{{.UrlTitle}}" class="nav-header">{{.Title}}</a>-->
-            <!--</li>-->
-            <!--{{end}}-->
-
-             <!--归档 -->
-            <!--<li class="{{if $.curIsArchive}}active{{end}}">-->
-                <!--<a href="{{$.archiveUrl}}" class="nav-header">归档</a>-->
-            <!--</li>-->
-            <!--<li class="{{if $.curIsTags}}active{{end}}">-->
-                <!--<a href="{{$.tagsUrl}}" class="nav-header">标签</a>-->
-            <!--</li>-->
-
-        <!--</ul>-->
-    <!--</nav>-->
   <div class="content-home text-center">
   <a class="avatar" href="/">
     <img src="/avatar.jpg" alt="" />
@@ -116,63 +84,3 @@
 
 </div>
 </header>
-<!--<div class="mainContent">-->
-    <!--<aside>-->
-        <!--<div class="avatar">-->
-            <!--{{if $.blogInfo.Logo}}-->
-
-
-            <!--<a href="{{$.indexUrl}}" style="display: block; padding-top: 97px; width: 160px; height: 160px; background: url({{$.blogInfo.Logo}}) no-repeat; background-size: 160px 160px;";><span>{{$.blogInfo.Title}}</span></a>-->
-            <!--{{else}}-->
-            <!--<a href="{{$.indexUrl}}" style="display: block; padding-top: 97px; width: 160px; height: 160px; background: url({{$.themeBaseUrl}}/images/photo.png) no-repeat; background-size: 160px 160px;";><span>{{$.blogInfo.Title}}</span></a>-->
-
-            <!--{{end}}-->
-        <!--</div>-->
-        <!--<section class="topspaceinfo">-->
-            <!--<h1>{{$.blogInfo.Title}}</h1>-->
-            <!--<p>{{$.blogInfo.SubTitle | raw}}</p>-->
-        <!--</section>-->
-
-        <!--<div class="userinfo">-->
-            <!--<p class="q-fans">佛为心，道为骨，儒为表，<br>大度看世界;<br>技在手，能在身，思在脑，<br>从容过生活。<br>三千年读史，不外功名利禄；<br>九万里悟道，终归诗酒田园。</p>-->
-
-        <!--</div>-->
-
-
-        <!--<section class="taglist">-->
-            <!--<h2>全部标签</h2>-->
-            <!--<ul>-->
-
-                <!--{{range $.tags}}-->
-                <!--<li>-->
-                    <!--<a href="{{$.tagPostsUrl}}/{{.Tag}}">-->
-                        <!--{{.Tag}}({{.Count}})-->
-                    <!--</a>-->
-                <!--</li>-->
-                <!--{{end}}-->
-
-            <!--</ul>-->
-        <!--</section>-->
-
-        <!--<section>-->
-            <!--<h2>最新文章</h2>-->
-            <!--<ul style="list-style: decimal-leading-zero;">-->
-                <!--{{range .recentPosts}}-->
-                <!--<li title="{{.Title}}"><a href="{{$.postUrl}}/{{.UrlTitle}}" style="color: #3F3E3C;">{{.Title}}</a></li>-->
-                <!--{{end}}-->
-            <!--</ul>-->
-
-        <!--</section>-->
-
-        <!--<section>-->
-            <!--<h2>友情链接</h2>-->
-            <!--<ul style="list-style: decimal-leading-zero;">-->
-                <!--{{if $.themeInfo.FriendLinks}}-->
-                <!--{{range $.themeInfo.FriendLinks}}-->
-                <!--<li><a href="{{.Url}}" target="_blank" style="color: #3F3E3C;">{{.Title}}</a></li>-->
-                <!--{{end}}-->
-                <!--{{end}}-->
-            <!--</ul>-->
-        <!--</section>-->
-
-    <!--</aside>-->
