@@ -1,0 +1,79 @@
+{{template "header.html" .}}
+
+<body>
+  <div class="content-post">
+  <a class="avatar" href="{{$.archiveUrl}}">
+      {{if $.blogInfo.Logo}}
+      <img src="{{$.blogInfo.Logo}}" alt="" />
+      {{else}}
+      <img src="{{$.themeBaseUrl}}/avatar.jpg" alt="" />
+      {{end}}
+  </a>
+  <article id="post-{{$.post.Title}}" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <div class="article-title article" >
+        {{$.post.Title}}
+    </div>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+      {{$.post.UpdatedTime | datetime}}
+
+    <span> | </span>
+
+    <span class="article-author">{{$.blogInfo.Username}}</span>
+
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+            {{if $.post.IsMarkdown }}
+                <div id="content" class="k-article">
+                    <!-- 用textarea装html, 防止得到的值失真 -->
+                    <textarea id="md">{{$.post.Content | raw}}</textarea>
+                </div>
+            {{else}}
+                    {{$.post.Content | raw}}
+            {{end}}
+
+
+    </div>
+
+    
+      
+
+    
+
+  </div>
+</article>
+
+        <div>
+
+            <!-- share & comment -->
+            {{template "share_comment.html" $}}
+
+
+            {{template "footer.html" $}}
+            {{template "highlight.html" $}}
+        </div>
+
+
+</div>
+
+<script src="{{$.themeBaseUrl}}/markdown-to-html.min.js"></script>
+<script>
+markdownToHtml(document.getElementById('md').value, document.getElementById('content'));
+</script>
+  
+<script src="{{$.themeBaseUrl}}/karticle.min.js"></script>
+
+</body>
+</html>

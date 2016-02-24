@@ -18,10 +18,26 @@
 
 
     <link href="{{$.themeBaseUrl}}/styles.css" rel="stylesheet">
+    <link href="{{$.themeBaseUrl}}/karticle.css" rel="stylesheet">
 
     <title>
         {{if $.curIsIndex}}
         {{$.blogInfo.Title}}
+        {{else if $.curIsCate}}
+        分类-{{$.curCateTitle}}
+        {{else if $.curIsSearch}}
+        搜索-{{$.keywords}}
+        {{else if $.curIsTags}}
+        我的标签
+        {{else if $.curIsTagPosts}}
+        标签-{{$.curTag}}
+        {{else if $.curIsPost}}
+        {{$.post.Title}}
+        {{else if $.curIsSingle}}
+        {{$.single.Title}}
+        {{else if $.curIsArchive}}
+        归档
         {{end}}
-    </title>
+    </title>                </div>
+
 </head>
