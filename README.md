@@ -7,7 +7,7 @@
 
 效果图：
 
-预览：
+预览: http://svtter.leanote.com
 
 ## Tips
 
